@@ -29,7 +29,10 @@ var Sound = (function(_super) {
         this._player.currentTime = 0;
     };
     Sound.prototype.release = function() {
-
+        if (this._player) {
+            this._player.release();
+            this._player = null;
+        }
     };
     return Sound;
 })(common.Sound);
