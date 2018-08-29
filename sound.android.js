@@ -23,7 +23,10 @@ var Sound = (function(_super) {
     Sound.prototype.stop = function() {
         this._player.stop(this._streamId);
     };
-    Sound.prototype.reset = function() {};
+    Sound.prototype.reset = function() {
+        this._player.release();
+        this._player = null;
+    };
     return Sound;
 })(common.Sound);
 exports.Sound = Sound;
