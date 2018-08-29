@@ -24,6 +24,9 @@ var Sound = (function(_super) {
         this._player.stop(this._streamId);
     };
     Sound.prototype.reset = function() {
+
+    };
+    Sound.prototype.release = function() {
         this._player.release();
         this._player = null;
     };
