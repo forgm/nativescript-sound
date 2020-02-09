@@ -54,8 +54,8 @@ beep.release();
 ### setVolume
 
 Sets volume, volume should be limited from 0.0 to 1.0.
-fadeInterval only for iOS
+fadeDuration only for iOS
 
 ```ts
-beep.setVolume(volume: number, fadeInterval?: number );
+beep.setVolume(volume: number, fadeDuration?: number );
 ```
