@@ -7,7 +7,7 @@ var Sound = (function(_super) {
         _super.apply(this, arguments);
 
         this._url = NSURL.fileURLWithPath(this._path);
-        this._player = new AVAudioPlayer();
+        this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(this._url);
         this._player.initWithContentsOfURLError(this._url);
         this._player.prepareToPlay();
     }
