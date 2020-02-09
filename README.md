@@ -1,40 +1,67 @@
-# nativescript-sound
+# NativeScript Sound
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+Play a sound in your NativeScript app.
 
-Then describe what's the purpose of your plugin. 
-
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+This project was originally programmed by John Bristowe, and it implements iOS 13.2 fix from Mathew Thompson. Starting point was Grey Laureckis (PR #9) fork that includes code from PR #8. Nativescript-plugin-seed was used to transport it to TypeScript from Vanilla JS. It has fully working demo on both iOS and Android
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
+Run the following command from the root of your project:
 
-```javascript
-tns plugin add nativescript-sound
+```
+npm i nativescript-forgm-sound
 ```
 
-## Usage 
+## Usage
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+To use this plugin you must first require() it:
 
-## API
+```ts
+import { Sound } from 'nativescript-sound';
+```
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
-## License
+### init and play
 
-Apache License Version 2.0, January 2004
+It's important to preload the audio file into the **sound** module before playing it; there is a delay during creation due to the audio being processed:
+
+```ts
+const beep = new Sound('~/sounds/beep.wav');
+
+// play the sound (i.e. tap event handler)
+beep.play();
+```
+
+### Pause
+
+```ts
+beep.pause();
+```
+
+### Resume
+
+```ts
+beep.resume();
+```
+
+### stop
+
+```ts
+beep.stop();
+```
+
+### release
+
+After release if you start to play, app will crash;
+
+```ts
+beep.release();
+```
+
+### setVolume
+
+Sets volume, volume should be limited from 0.0 to 1.0.
+fadeInterval only for iOS
+
+```ts
+beep.setVolume(volume: number, fadeInterval?: number );
+```

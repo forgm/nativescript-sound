@@ -2,7 +2,7 @@ import { Sound } from 'nativescript-sound';
 import { NavigatedData, Page } from 'tns-core-modules/ui/page/page';
 import { HomeViewModel } from './home-view-model';
 
-let beep = new Sound('~/home/sounds/beep.wav');
+const beep = new Sound('~/home/sounds/beep.wav');
 let volume = 1;
 export function onNavigatingTo(args: NavigatedData) {
     const page = <Page>args.object;
