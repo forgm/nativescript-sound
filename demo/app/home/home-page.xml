@@ -3,10 +3,20 @@
     xmlns="http://schemas.nativescript.org/tns.xsd">
     
     <ActionBar>
-        <Label text="Home"></Label>
+        <Label text="Nativescript-sound"></Label>
     </ActionBar>
-
-    <GridLayout>
-        <!-- Add your page content here -->
-    </GridLayout>
+    <StackLayout class="m-20">
+        <Button text="Play" tap="onTapPlay" class="btn -rounded-sm"></Button>
+        <Button text="Pause" tap="onTapPause" class="-rounded-sm"></Button>
+        <Button text="Resume" tap="onTapResume" class="-rounded-sm"></Button>
+        <Button text="Stop" tap="onTapStop" class="-rounded-sm"></Button>
+        <StackLayout orientation="horizontal" horizontalAlignment="center">
+            <Button text="-" tap="onTapDecreaseVolume" class="-rounded-sm"></Button>
+            <Button  text="Mute" tap="onTapMute" class="-rounded-sm"></Button>
+            <Button text="+" tap="onTapIncreaseVolume" class="-rounded-sm"></Button>
+        </StackLayout>
+        
+        <Button text="Release" tap="onTapRelease" class="-rounded-sm"></Button>
+    </StackLayout>
+    
 </Page>

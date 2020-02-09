@@ -7,11 +7,25 @@ export class Sound extends SoundCommon implements PtSound {
   play(): void {
     this.player.play();
   }
+  pause(): void {
+    if (this.player.playing) {
+      this.player.pause();
+      this.player.prepareToPlay();
+    }
+  }
+  resume(): void {
+    if (!this.player.playing) {
+      this.play();
+    }
+  }
   stop(): void {
     this.player.stop();
+    this.player.currentTime = 0;
+    this.player.prepareToPlay();
   }
-  setVolume(): void {
-    throw new Error('Method not implemented.');
+
+  setVolume(volume: number, fadeDuration: number = 0): void {
+    this.player.setVolumeFadeDuration(volume, fadeDuration);
   }
   reset(): void {
     this.player.stop();

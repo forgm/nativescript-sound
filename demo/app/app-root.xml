@@ -1,1 +1,1 @@
-<Frame defaultPage="home/home-page"></Frame>
+<Frame class="ns-dark" defaultPage="home/home-page"></Frame>

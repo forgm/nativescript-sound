@@ -1,17 +1,42 @@
 import { Sound } from 'nativescript-sound';
-console.log(new Sound().message);
-/*
-In NativeScript, a file with the same name as an XML file is known as
-a code-behind file. The code-behind is a great place to place your view
-logic, and to set up your page’s data binding.
-*/
+import { NavigatedData, Page } from 'tns-core-modules/ui/page/page';
+import { HomeViewModel } from './home-view-model';
 
-import { NavigatedData, Page } from "tns-core-modules/ui/page";
-
-import { HomeViewModel } from "./home-view-model";
-
+let beep = new Sound('~/home/sounds/beep.wav');
+let volume = 1;
 export function onNavigatingTo(args: NavigatedData) {
     const page = <Page>args.object;
 
     page.bindingContext = new HomeViewModel();
+}
+export function onTapPlay() {
+    beep.play();
+}
+export function onTapPause() {
+    beep.pause();
+}
+export function onTapResume() {
+    beep.resume();
+}
+export function onTapStop() {
+    beep.stop();
+}
+export function onTapRelease() {
+    beep.release();
+}
+export function onTapMute() {
+    volume = 0;
+    beep.setVolume(volume);
+}
+export function onTapIncreaseVolume() {
+    if (volume <= 0.9) {
+        volume = volume + 0.1;
+    }
+    beep.setVolume(volume);
+}
+export function onTapDecreaseVolume() {
+    if (volume >= 0.1) {
+        volume = volume - 0.1;
+    }
+    beep.setVolume(volume);
 }

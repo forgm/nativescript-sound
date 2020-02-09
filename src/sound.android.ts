@@ -16,15 +16,17 @@ export class Sound extends SoundCommon implements PtSound {
       1.0
     );
   }
+  pause(): void {
+    this.player.pause(this.streamId);
+  }
+  resume(): void {
+    this.player.resume(this.streamId);
+  }
   stop(): void {
     this.player.stop(this.streamId);
   }
   setVolume(volume: number): void {
-    if (typeof volume === 'number' && volume >= 0.0 && volume <= 1.0) {
-      this.volume = volume;
-    } else {
-      throw new Error('Volume not set; volume outside of range 0.0 - 1.0');
-    }
+    this.player.setVolume(this.streamId, volume, volume);
   }
   reset(): void {
     throw new Error('Method not implemented.');
