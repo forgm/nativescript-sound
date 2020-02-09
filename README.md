@@ -6,15 +6,9 @@ This project was originally programmed by John Bristowe, and it implements iOS 1
 
 ## Installation
 
-Run the following command from the root of your project:
-
-```
-npm i nativescript-forgm-sound
-```
-
 ## Usage
 
-To use this plugin you must first require() it:
+To use this plugin you must first import it:
 
 ```ts
 import { Sound } from 'nativescript-sound';
@@ -31,13 +25,13 @@ const beep = new Sound('~/sounds/beep.wav');
 beep.play();
 ```
 
-### Pause
+### pause
 
 ```ts
 beep.pause();
 ```
 
-### Resume
+### resume
 
 ```ts
 beep.resume();
