@@ -15,7 +15,7 @@ npm i nativescript-forgm-sound --save
 To use this plugin you must first import it:
 
 ```ts
-import { Sound } from 'nativescript-sound';
+import { Sound } from 'nativescript-forgm-sound';
 ```
 
 ### init and play
