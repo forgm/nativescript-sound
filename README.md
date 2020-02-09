@@ -6,6 +6,10 @@ This project was originally programmed by John Bristowe, and it implements iOS 1
 
 ## Installation
 
+```
+npm i nativescript-forgm-sound --save
+```
+
 ## Usage
 
 To use this plugin you must first import it:
@@ -54,7 +58,7 @@ beep.release();
 ### setVolume
 
 Sets volume, volume should be limited from 0.0 to 1.0.
-fadeDuration only for iOS
+fadeDuration in miliseconds only for iOS
 
 ```ts
 beep.setVolume(volume: number, fadeDuration?: number );
