@@ -1,4 +1,13 @@
 {
+  "nativescript": {
+    "id": "org.nativescript.demo",
+    "tns-android": {
+      "version": "6.3.1"
+    },
+    "tns-ios": {
+      "version": "6.3.0"
+    }
+  },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
@@ -8,12 +17,10 @@
     "@nativescript/theme": "~2.2.1"
   },
   "devDependencies": {
-    "@nativescript/android": "7.0.0",
-    "@nativescript/types": "~7.0.0",
     "@nativescript/webpack": "~3.0.0",
+    "@nativescript/types": "~7.0.0",
     "typescript": "~3.9.0"
   },
   "gitHead": "fa98f785df3fba482e5e2a0c76f4be1fa6dc7a14",
-  "readme": "NativeScript Application",
-  "main": "app.js"
+  "readme": "NativeScript Application"
 }
