@@ -38,9 +38,9 @@ export class Sound extends SoundCommon implements PtSound {
       this.player = null;
     }
   }
-  constructor(path: string) {
-    super(path);
-    this.url = NSURL.fileURLWithPath(this.path);
+  constructor(soundPath: string) {
+    super(soundPath);
+    this.url = NSURL.fileURLWithPath(this.soundPath);
     this.player = AVAudioPlayer.alloc().initWithContentsOfURLError(this.url);
     this.player.initWithContentsOfURLError(this.url);
     this.player.prepareToPlay();
