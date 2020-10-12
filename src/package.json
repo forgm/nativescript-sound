@@ -1,6 +1,6 @@
 {
   "name": "nativescript-forgm-sound",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Fork of original nativescript-sound plugin with implemented 13.2 iOS fixed and transfer to use typescript with nativescript-plugin-seed",
   "main": "sound",
   "typings": "index.d.ts",
