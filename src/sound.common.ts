@@ -1,22 +1,21 @@
-import { path, File, knownFolders } from '@nativescript/core';
-import { isString } from '@nativescript/core/utils/types';
-
+import * as types from 'tns-core-modules/utils/types';
+import * as fs from 'tns-core-modules/file-system/file-system';
 export class SoundCommon {
-  public soundPath: string;
-  constructor(soundPath) {
-    this.soundPath = this.constructPath(soundPath);
+  public path: string;
+  constructor(path) {
+    this.path = this.constructPath(path);
   }
-  private constructPath(soundPath: string): string {
-    soundPath = isString(soundPath) ? soundPath.trim() : '';
-    if (soundPath.indexOf('~/') === 0) {
-      soundPath = path.join(
-        knownFolders.currentApp().path,
-        soundPath.replace('~/', '')
+  private constructPath(path: string): string {
+    path = types.isString(path) ? path.trim() : '';
+    if (path.indexOf('~/') === 0) {
+      path = fs.path.join(
+        fs.knownFolders.currentApp().path,
+        path.replace('~/', '')
       );
     }
-    if (!File.exists(soundPath)) {
+    if (!fs.File.exists(path)) {
       throw new Error('No file on given path!');
     }
-    return soundPath;
+    return path;
   }
 }

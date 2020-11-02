@@ -1,5 +1,5 @@
 import { Sound } from 'nativescript-sound';
-import { NavigatedData, Page } from '@nativescript/core';
+import { NavigatedData, Page } from 'tns-core-modules/ui/page/page';
 import { HomeViewModel } from './home-view-model';
 
 const beep = new Sound('~/home/sounds/beep.wav');

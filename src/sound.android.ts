@@ -45,7 +45,7 @@ export class Sound extends SoundCommon implements PtSound {
       android.media.AudioManager.STREAM_MUSIC,
       0
     );
-    this.soundId = this.player.load(this.soundPath, 1);
+    this.soundId = this.player.load(this.path, 1);
     this.streamId = null;
   }
 }
